@@ -71,12 +71,12 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/understanding-f1-race-weekends#flags" className="hover:text-white transition-colors block py-0.5">
+                <Link to="/understanding-f1-race-weekends#flags-and-safety" className="hover:text-white transition-colors block py-0.5">
                   Flag Signals Guide
                 </Link>
               </li>
               <li>
-                <Link to="/f1-teams-and-drivers#market" className="hover:text-white transition-colors block py-0.5">
+                <Link to="/f1-teams-and-drivers#market-and-rookies" className="hover:text-white transition-colors block py-0.5">
                   Driver Market & Transfers
                 </Link>
               </li>

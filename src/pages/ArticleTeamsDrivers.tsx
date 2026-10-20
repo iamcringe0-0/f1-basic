@@ -172,6 +172,8 @@ export const ArticleTeamsDrivers: React.FC = () => {
         readTime="10 min read"
         intro="Formula 1 is a paradox: you must beat your teammate to prove you are elite, yet you must cooperate with them to win millions in constructors’ prize money. Here is how 10 teams, 20 drivers, and thousands of engineers operate on the world’s most competitive sporting grid."
         tableOfContents={TOC}
+        heroImage="/images/f1-teams-drivers.jpg"
+        heroImageAlt="Formula 1 starting grid with cars, drivers, and mechanics lined up before the race start"
         heroGraphic={
           <div className="relative p-8 lg:p-12 overflow-hidden bg-gradient-to-br from-[#12141c] via-[#101015] to-[#0c0c0e]">
             <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
@@ -216,6 +218,22 @@ export const ArticleTeamsDrivers: React.FC = () => {
           <p>
             The Formula 1 starting grid consists of exactly <strong>10 teams</strong> fielding a total of <strong>20 cars</strong> (two cars per team). To first grasp the foundational sport rules, you can <Link to="/f1-basics" className="text-[#e10600] underline font-medium hover:text-white transition-colors">understand how F1 works</Link>.
           </p>
+
+          <div className="rounded-xl overflow-hidden border border-neutral-800 bg-neutral-900 my-4">
+            <img
+              src="/images/f1-hero.jpg"
+              alt="Formula 1 car accelerating down the straight demonstrating high-speed aerodynamic design"
+              className="w-full h-48 sm:h-64 object-cover"
+              loading="lazy"
+              width="1280"
+              height="853"
+            />
+            <div className="p-3 bg-neutral-950/80 border-t border-neutral-800 text-xs text-neutral-400 flex items-center justify-between">
+              <span>Constructor Engineering in Action</span>
+              <span className="font-mono text-[#e10600]">10 Independent Chassis · Bespoke Aerodynamics</span>
+            </div>
+          </div>
+
           <p>
             Entering Formula 1 is one of the most exclusive and expensive sporting achievements on earth. Teams must meet stringent financial criteria, operate massive design and manufacturing facilities, and comply with the FIA Financial Regulations—commonly referred to as the <strong>Cost Cap</strong> (introduced to prevent ultra-wealthy teams from outspending rivals by hundreds of millions of dollars).
           </p>

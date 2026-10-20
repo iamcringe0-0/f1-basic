@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, BookOpen, Clock, ChevronRight, Share2, Check } from 'lucide-react';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
-import { ArticleMeta, ARTICLES } from '../types';
+import { ARTICLES } from '../types';
 
 interface TocItem {
   id: string;
@@ -15,8 +15,10 @@ interface ArticleLayoutProps {
   title: string;
   kicker: string;
   readTime: string;
-  intro: string;
+  intro?: string;
   tableOfContents: TocItem[];
+  heroImage?: string;
+  heroImageAlt?: string;
   heroGraphic: React.ReactNode;
   children: React.ReactNode;
 }
@@ -28,6 +30,8 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({
   readTime,
   intro,
   tableOfContents,
+  heroImage,
+  heroImageAlt,
   heroGraphic,
   children,
 }) => {
@@ -93,13 +97,28 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.1] mb-5 font-display text-balance">
               {title}
             </h1>
-            <p className="text-base sm:text-lg text-neutral-300 leading-relaxed max-w-3xl">
-              {intro}
-            </p>
+            {intro && (
+              <p className="text-base sm:text-lg text-neutral-300 leading-relaxed max-w-3xl">
+                {intro}
+              </p>
+            )}
           </div>
 
-          {/* Hero Visual Container */}
+          {/* Hero Image & Visual Container */}
           <div className="mt-8 rounded-xl overflow-hidden border border-neutral-800 bg-[#121217] shadow-2xl">
+            {heroImage && (
+              <div className="relative w-full h-64 sm:h-80 md:h-96 overflow-hidden border-b border-neutral-800">
+                <img
+                  src={heroImage}
+                  alt={heroImageAlt || title}
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                  width="1280"
+                  height="720"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#121217] via-transparent to-transparent opacity-60" />
+              </div>
+            )}
             {heroGraphic}
           </div>
         </header>
@@ -169,7 +188,18 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({
                   className="group rounded-xl border border-neutral-800 bg-[#111116] p-6 hover:border-[#e10600]/60 hover:bg-[#14141a] transition-all flex flex-col justify-between"
                 >
                   <div>
-                    <div className="flex items-center justify-between text-xs text-neutral-400 mb-3">
+                    {/* Visual Card Image */}
+                    <div className="w-full h-44 overflow-hidden rounded-lg mb-4 border border-neutral-800 bg-neutral-900">
+                      <img
+                        src={article.image}
+                        alt={article.imageAlt}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                        width="800"
+                        height="450"
+                      />
+                    </div>
+                    <div className="flex items-center justify-between text-xs text-neutral-400 mb-2">
                       <span className="font-mono text-[#e10600] font-bold">GUIDE {article.number}</span>
                       <span>{article.readTime}</span>
                     </div>

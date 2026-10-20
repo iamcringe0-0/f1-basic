@@ -129,8 +129,10 @@ export const ArticleBasics: React.FC = () => {
         title="How F1 Works: A Beginner's Guide to Formula 1"
         kicker="Core Fundamentals · Guide 01"
         readTime="10 min read"
-        intro="Formula 1 is the pinnacle of global motorsport: a high-stakes championship combining boundary-pushing engineering, elite human athletes, split-second tactical strategy, and 350 km/h wheel-to-wheel racing. Here is everything you need to know about how F1 works, its rules, cars, and points system."
+        intro="Formula 1 is the pinnacle of motorsport—a high-stakes collision of cutting-edge aerodynamics, 1,000-horsepower hybrid power units, elite human athleticism, and multi-million dollar strategy. Here is your definitive beginner’s guide to understanding how the world championship works."
         tableOfContents={TOC}
+        heroImage="/images/f1-basics.jpg"
+        heroImageAlt="Formula 1 racing car demonstrating aerodynamic front wing, halo cockpit safety, and slick tyres"
         heroGraphic={
           <div className="relative p-8 lg:p-12 overflow-hidden bg-gradient-to-br from-[#181820] via-[#101015] to-[#0c0c0e]">
             <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
@@ -289,6 +291,21 @@ export const ArticleBasics: React.FC = () => {
           <p>
             During a pit stop, approximately 20 crew members perform a choreographed miracle in under 2.5 seconds: four wheel guns remove the locking nuts, four members pull the old tyres, four fit fresh tyres, two jacks lift the front and rear of the car, and wing adjusters dial in front flap angles. A mistake of half a second can cost a driver multiple track positions.
           </p>
+
+          <div className="rounded-xl overflow-hidden border border-neutral-800 bg-neutral-900 my-4">
+            <img
+              src="/images/f1-race-weekend.jpg"
+              alt="Formula 1 pit crew servicing a car in the pit box during a synchronized rapid tyre change"
+              className="w-full h-48 sm:h-64 object-cover"
+              loading="lazy"
+              width="1024"
+              height="517"
+            />
+            <div className="p-3 bg-neutral-950/80 border-t border-neutral-800 text-xs text-neutral-400 flex items-center justify-between">
+              <span>Synchronised Pit Stop Ballet</span>
+              <span className="font-mono text-[#e10600]">~20 Crew Members · Sub-2.5s Execution</span>
+            </div>
+          </div>
         </section>
 
         {/* 6. How F1 Drivers and Teams Earn Points */}

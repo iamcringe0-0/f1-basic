@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ArrowRight, Zap, Shield, Flag, Award, Compass, Timer } from 'lucide-react';
+import { ChevronRight, ArrowRight, Zap, Shield, Timer } from 'lucide-react';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { SEOHead } from '../components/SEOHead';
+import { ARTICLES } from '../types';
 
 export const HomePage: React.FC = () => {
   const homeSchema = {
@@ -73,13 +74,13 @@ export const HomePage: React.FC = () => {
                   Formula 1 can seem intimidating with its technical jargon, complex penalty flags, and 3-day weekend formats. <strong>F1 Explained</strong> helps beginners explore Formula 1 with structured, easy-to-follow guides covering rules, race strategies, and paddock dynamics.
                 </p>
 
-                {/* Primary & Secondary CTAs with descriptive anchor text */}
+                {/* Primary & Secondary CTAs with clear, working links */}
                 <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                   <Link
                     to="/f1-basics"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-white bg-[#e10600] hover:bg-[#c20500] rounded-lg transition-all shadow-lg shadow-red-950/50 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
                   >
-                    <span>learn the basics of Formula 1</span>
+                    <span>Learn the Basics of Formula 1</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
 
@@ -87,7 +88,7 @@ export const HomePage: React.FC = () => {
                     to="/understanding-f1-race-weekends"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-neutral-200 hover:text-white bg-neutral-900/90 hover:bg-neutral-800 border border-neutral-700/80 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
                   >
-                    <span>understand an F1 race weekend</span>
+                    <span>Understand an F1 Race Weekend</span>
                     <ChevronRight className="w-4 h-4 text-neutral-400" />
                   </Link>
                 </div>
@@ -109,61 +110,45 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Hero Motorsport Visual Graphic */}
+              {/* Hero Motorsport Visual Graphic with Photography */}
               <div className="lg:col-span-5">
                 <div 
-                  className="rounded-2xl border border-neutral-800 bg-[#121218] p-6 shadow-2xl relative overflow-hidden group"
+                  className="rounded-2xl border border-neutral-800 bg-[#121218] p-5 sm:p-6 shadow-2xl relative overflow-hidden group space-y-4"
                   role="region"
-                  aria-label="Interactive race start lights and grid illustration"
+                  aria-label="Formula 1 car and starting lights illustration"
                 >
-                  <div className="flex items-center justify-between border-b border-neutral-800 pb-4 mb-5">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2.5 h-2.5 rounded-full bg-[#e10600]" />
-                      <span className="text-xs font-mono font-bold uppercase text-white">Grid Formation · Turn 1 Ahead</span>
+                  {/* Hero Image Container */}
+                  <div className="relative w-full h-56 sm:h-64 rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
+                    <img
+                      src="/images/f1-hero.jpg"
+                      alt="Formula 1 racing car in action at speed down the main straight"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      width="1280"
+                      height="853"
+                      loading="eager"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#121218] via-transparent to-transparent opacity-75" />
+                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-neutral-300 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded border border-neutral-700/60">
+                      <span>Live Track Telemetry</span>
+                      <span className="text-[#e10600] font-bold">342 km/h · Sector 3</span>
                     </div>
-                    <span className="text-[11px] font-mono text-neutral-400">Lights Out Countdown</span>
                   </div>
 
                   {/* Starting Lights Graphic */}
                   <div 
-                    className="flex justify-center gap-2 sm:gap-3 py-4 bg-neutral-950 rounded-xl border border-neutral-800/80 mb-5"
+                    className="flex justify-center gap-2 sm:gap-3 py-3 bg-neutral-950 rounded-xl border border-neutral-800/80"
                     role="img"
                     aria-label="Illustration of five red FIA start lights illuminating across the gantry"
                   >
                     {[1, 2, 3, 4, 5].map((light) => (
-                      <div key={light} className="flex flex-col items-center gap-1.5 p-2 bg-neutral-900 rounded-md border border-neutral-800">
-                        <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#e10600] shadow-[0_0_12px_#e10600] animate-pulse" />
-                        <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#3a0604]" />
+                      <div key={light} className="flex flex-col items-center gap-1 p-1.5 bg-neutral-900 rounded-md border border-neutral-800">
+                        <div className="w-4 h-4 rounded-full bg-[#e10600] shadow-[0_0_10px_#e10600] animate-pulse" />
+                        <div className="w-4 h-4 rounded-full bg-[#3a0604]" />
                       </div>
                     ))}
                   </div>
 
-                  {/* Car Matchup Snippet */}
-                  <div className="space-y-3">
-                    <div className="p-3.5 rounded-lg bg-neutral-900/80 border border-neutral-800 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs font-mono font-bold text-[#e10600]">P1</span>
-                        <div>
-                          <p className="text-xs font-bold text-white">Pole Position Launch</p>
-                          <p className="text-[11px] text-neutral-400">Clean air · Inside racing line</p>
-                        </div>
-                      </div>
-                      <span className="text-xs font-mono text-neutral-300">0–100 km/h: 2.4s</span>
-                    </div>
-
-                    <div className="p-3.5 rounded-lg bg-neutral-900/80 border border-neutral-800 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs font-mono font-bold text-neutral-400">P2</span>
-                        <div>
-                          <p className="text-xs font-bold text-white">Front Row Challenger</p>
-                          <p className="text-[11px] text-neutral-400">Slipstream attack down straight</p>
-                        </div>
-                      </div>
-                      <span className="text-xs font-mono text-neutral-300">Reaction: ~0.20s</span>
-                    </div>
-                  </div>
-
-                  <div className="mt-5 pt-4 border-t border-neutral-800/80 flex items-center justify-between text-xs text-neutral-400">
+                  <div className="flex items-center justify-between text-xs text-neutral-400 pt-1">
                     <span>Grand Prix Race Distance:</span>
                     <span className="font-mono text-white font-bold">~305 km</span>
                   </div>
@@ -180,7 +165,6 @@ export const HomePage: React.FC = () => {
               <span className="text-xs font-bold uppercase tracking-wider text-[#e10600] block">
                 The Pinnacle of Motorsport
               </span>
-              {/* Semantic H2 */}
               <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight font-display">
                 What Is Formula 1?
               </h2>
@@ -229,7 +213,7 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Section D: Explore the Guides */}
+        {/* Section D: Explore the Guides - All 3 Cards with Restored Images */}
         <section className="py-16 lg:py-24 border-b border-[#22222a] bg-[#0f0f13]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
@@ -237,7 +221,6 @@ export const HomePage: React.FC = () => {
                 <span className="text-xs font-bold uppercase tracking-wider text-[#e10600] block mb-1">
                   Master the Sport
                 </span>
-                {/* Semantic H2 */}
                 <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight font-display">
                   Learn Formula 1: Beginner Guides
                 </h2>
@@ -251,20 +234,28 @@ export const HomePage: React.FC = () => {
               {/* Card 1: F1 Basics */}
               <div className="rounded-2xl border border-neutral-800 bg-[#121217] overflow-hidden flex flex-col justify-between hover:border-neutral-700 transition-all group">
                 <div>
-                  <div className="p-6 bg-neutral-900 border-b border-neutral-800 relative overflow-hidden">
-                    <div className="flex items-center justify-between text-xs text-neutral-400 mb-4">
-                      <span className="font-mono text-[#e10600] font-bold">GUIDE 01</span>
-                      <span>10 min read</span>
+                  {/* Card Visual Image */}
+                  <div className="w-full h-48 overflow-hidden bg-neutral-900 border-b border-neutral-800 relative">
+                    <img
+                      src="/images/f1-basics.jpg"
+                      alt="Formula 1 racing car demonstrating aerodynamic front wing, halo cockpit safety, and slick tyres"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      width="1280"
+                      height="538"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-sm px-2.5 py-1 rounded text-[11px] font-mono text-[#e10600] font-bold border border-neutral-800">
+                      GUIDE 01
                     </div>
-                    <div className="w-12 h-12 rounded-xl bg-neutral-800 flex items-center justify-center text-[#e10600] mb-4 group-hover:scale-105 transition-transform">
-                      <Compass className="w-6 h-6" />
+                    <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-sm px-2 py-1 rounded text-[11px] font-mono text-neutral-300">
+                      10 min read
                     </div>
-                    <h3 className="text-xl font-bold text-white font-display group-hover:text-red-400 transition-colors">
-                      F1 Basics & Principles
-                    </h3>
                   </div>
 
                   <div className="p-6 space-y-3">
+                    <h3 className="text-xl font-bold text-white font-display group-hover:text-red-400 transition-colors">
+                      F1 Basics & Principles
+                    </h3>
                     <p className="text-sm text-neutral-300 leading-relaxed">
                       Understand how Formula 1 works, championship structures, car anatomy, hybrid power units, aerodynamic downforce, and essential beginner terms like DRS and pit stops.
                     </p>
@@ -282,7 +273,7 @@ export const HomePage: React.FC = () => {
                     to="/f1-basics"
                     className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-neutral-900 hover:bg-[#e10600] text-white text-xs font-bold uppercase tracking-wider transition-colors border border-neutral-800 hover:border-[#e10600]"
                   >
-                    <span>learn the basics of Formula 1</span>
+                    <span>Read F1 Basics Guide</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -291,20 +282,27 @@ export const HomePage: React.FC = () => {
               {/* Card 2: Race Weekend */}
               <div className="rounded-2xl border border-neutral-800 bg-[#121217] overflow-hidden flex flex-col justify-between hover:border-neutral-700 transition-all group">
                 <div>
-                  <div className="p-6 bg-neutral-900 border-b border-neutral-800 relative overflow-hidden">
-                    <div className="flex items-center justify-between text-xs text-neutral-400 mb-4">
-                      <span className="font-mono text-[#e10600] font-bold">GUIDE 02</span>
-                      <span>11 min read</span>
+                  <div className="w-full h-48 overflow-hidden bg-neutral-900 border-b border-neutral-800 relative">
+                    <img
+                      src="/images/f1-race-weekend.jpg"
+                      alt="Formula 1 pit crew executing a high-speed wheel change during a Grand Prix pit stop"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      width="1024"
+                      height="517"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-sm px-2.5 py-1 rounded text-[11px] font-mono text-[#e10600] font-bold border border-neutral-800">
+                      GUIDE 02
                     </div>
-                    <div className="w-12 h-12 rounded-xl bg-neutral-800 flex items-center justify-center text-[#e10600] mb-4 group-hover:scale-105 transition-transform">
-                      <Flag className="w-6 h-6" />
+                    <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-sm px-2 py-1 rounded text-[11px] font-mono text-neutral-300">
+                      11 min read
                     </div>
-                    <h3 className="text-xl font-bold text-white font-display group-hover:text-red-400 transition-colors">
-                      Understanding an F1 Race Weekend
-                    </h3>
                   </div>
 
                   <div className="p-6 space-y-3">
+                    <h3 className="text-xl font-bold text-white font-display group-hover:text-red-400 transition-colors">
+                      Understanding an F1 Race Weekend
+                    </h3>
                     <p className="text-sm text-neutral-300 leading-relaxed">
                       Learn how the 3-day weekend unfolds: Free Practice testing, the dramatic Q1-Q2-Q3 knockout qualifying sessions, the Sunday Grand Prix, Sprint formats, and marshal flag signals.
                     </p>
@@ -322,7 +320,7 @@ export const HomePage: React.FC = () => {
                     to="/understanding-f1-race-weekends"
                     className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-neutral-900 hover:bg-[#e10600] text-white text-xs font-bold uppercase tracking-wider transition-colors border border-neutral-800 hover:border-[#e10600]"
                   >
-                    <span>understand an F1 race weekend</span>
+                    <span>Read Race Weekend Guide</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -331,20 +329,27 @@ export const HomePage: React.FC = () => {
               {/* Card 3: Teams & Drivers */}
               <div className="rounded-2xl border border-neutral-800 bg-[#121217] overflow-hidden flex flex-col justify-between hover:border-neutral-700 transition-all group">
                 <div>
-                  <div className="p-6 bg-neutral-900 border-b border-neutral-800 relative overflow-hidden">
-                    <div className="flex items-center justify-between text-xs text-neutral-400 mb-4">
-                      <span className="font-mono text-[#e10600] font-bold">GUIDE 03</span>
-                      <span>10 min read</span>
+                  <div className="w-full h-48 overflow-hidden bg-neutral-900 border-b border-neutral-800 relative">
+                    <img
+                      src="/images/f1-teams-drivers.jpg"
+                      alt="Formula 1 starting grid with cars, drivers, and mechanics lined up before the race start"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      width="1280"
+                      height="613"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-sm px-2.5 py-1 rounded text-[11px] font-mono text-[#e10600] font-bold border border-neutral-800">
+                      GUIDE 03
                     </div>
-                    <div className="w-12 h-12 rounded-xl bg-neutral-800 flex items-center justify-center text-[#e10600] mb-4 group-hover:scale-105 transition-transform">
-                      <Award className="w-6 h-6" />
+                    <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-sm px-2 py-1 rounded text-[11px] font-mono text-neutral-300">
+                      10 min read
                     </div>
-                    <h3 className="text-xl font-bold text-white font-display group-hover:text-red-400 transition-colors">
-                      F1 Teams and Drivers
-                    </h3>
                   </div>
 
                   <div className="p-6 space-y-3">
+                    <h3 className="text-xl font-bold text-white font-display group-hover:text-red-400 transition-colors">
+                      F1 Teams and Drivers
+                    </h3>
                     <p className="text-sm text-neutral-300 leading-relaxed">
                       Discover how 10 constructors field 20 drivers, the paradox of teammate competition, team principal leadership, in-season engineering upgrades, and the infamous driver market.
                     </p>
@@ -362,7 +367,7 @@ export const HomePage: React.FC = () => {
                     to="/f1-teams-and-drivers"
                     className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-neutral-900 hover:bg-[#e10600] text-white text-xs font-bold uppercase tracking-wider transition-colors border border-neutral-800 hover:border-[#e10600]"
                   >
-                    <span>explore Formula 1 teams and drivers</span>
+                    <span>Read Teams & Drivers Guide</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -378,7 +383,6 @@ export const HomePage: React.FC = () => {
               <span className="text-xs font-bold uppercase tracking-wider text-[#e10600] block mb-1">
                 Structured Curriculum
               </span>
-              {/* Semantic H2 */}
               <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight font-display">
                 Start Learning Formula 1
               </h2>
@@ -404,7 +408,7 @@ export const HomePage: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex items-center text-xs font-semibold text-neutral-300 group-hover:text-white">
-                  <span>learn the basics of Formula 1</span>
+                  <span>Learn the basics of Formula 1</span>
                   <ChevronRight className="w-3.5 h-3.5 ml-1 text-[#e10600]" />
                 </div>
               </Link>
@@ -425,7 +429,7 @@ export const HomePage: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex items-center text-xs font-semibold text-neutral-300 group-hover:text-white">
-                  <span>understand an F1 race weekend</span>
+                  <span>Understand an F1 race weekend</span>
                   <ChevronRight className="w-3.5 h-3.5 ml-1 text-[#e10600]" />
                 </div>
               </Link>
@@ -446,7 +450,7 @@ export const HomePage: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex items-center text-xs font-semibold text-neutral-300 group-hover:text-white">
-                  <span>explore Formula 1 teams and drivers</span>
+                  <span>Explore Formula 1 teams and drivers</span>
                   <ChevronRight className="w-3.5 h-3.5 ml-1 text-[#e10600]" />
                 </div>
               </Link>

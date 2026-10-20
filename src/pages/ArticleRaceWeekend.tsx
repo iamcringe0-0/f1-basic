@@ -131,8 +131,10 @@ export const ArticleRaceWeekend: React.FC = () => {
         title="How an F1 Race Weekend Works"
         kicker="Weekend Formats · Guide 02"
         readTime="11 min read"
-        intro="A Formula 1 Grand Prix is not just a two-hour Sunday race. It is a carefully staged three-day strategic contest of practice adjustments, high-stakes knockout qualifying, and variable weather challenges. Here is how the entire F1 race weekend works from Friday morning to Sunday evening."
+        intro="A Formula 1 Grand Prix is far more than a single Sunday race. Over three high-intensity days, teams progress through exploratory practice, cutthroat knockout qualifying, and full-distance race tactics. Here is the step-by-step breakdown of how an F1 race weekend works."
         tableOfContents={TOC}
+        heroImage="/images/f1-race-weekend.jpg"
+        heroImageAlt="Formula 1 pit crew executing a high-speed wheel change during a Grand Prix pit stop"
         heroGraphic={
           <div className="relative p-8 lg:p-12 overflow-hidden bg-gradient-to-br from-[#1c1214] via-[#121217] to-[#0c0c0e]">
             <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
@@ -324,6 +326,21 @@ export const ArticleRaceWeekend: React.FC = () => {
           <p>
             Once all 20 cars are stationary in their staggered grid boxes, the start gantry sequence begins: five red lights illuminate one by one at one-second intervals. Then, after a random computer-controlled pause of between 0.2 and 3 seconds, <strong>all five red lights extinguish simultaneously</strong>. That split second is &quot;Lights Out!&quot;—and the race begins.
           </p>
+
+          <div className="rounded-xl overflow-hidden border border-neutral-800 bg-neutral-900 my-4">
+            <img
+              src="/images/f1-teams-drivers.jpg"
+              alt="Formula 1 starting grid with cars and drivers lined up before the race start"
+              className="w-full h-48 sm:h-64 object-cover"
+              loading="lazy"
+              width="1280"
+              height="613"
+            />
+            <div className="p-3 bg-neutral-950/80 border-t border-neutral-800 text-xs text-neutral-400 flex items-center justify-between">
+              <span>The Starting Grid Formation</span>
+              <span className="font-mono text-[#e10600]">20 Cars · Lights Out Launch Sequence</span>
+            </div>
+          </div>
 
           <TyreStrategyVisual />
         </section>
