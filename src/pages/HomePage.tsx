@@ -15,7 +15,7 @@ export const HomePage: React.FC = () => {
         '@id': 'https://f1-basic.vercel.app/#website',
         url: 'https://f1-basic.vercel.app/',
         name: 'F1 Explained',
-        description: 'New to Formula 1? Learn the basics of F1, understand race weekends, and discover how teams, drivers, and championships work with F1 Explained.',
+        description: 'New to Formula 1? Learn the Formula 1 basics, understand how F1 works across race weekends, and discover how teams, drivers, and championships compete.',
         publisher: {
           '@id': 'https://f1-basic.vercel.app/#organization',
         },
@@ -36,8 +36,8 @@ export const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#0c0c0e] text-neutral-200 flex flex-col">
       <SEOHead
-        title="Formula 1 Basics: A Beginner's Guide to F1 | F1 Explained"
-        description="New to Formula 1? Learn the basics of F1, understand race weekends, and discover how teams, drivers, and championships work with F1 Explained."
+        title="Formula 1 Basics: How F1 Works & Beginner's Guide | F1 Explained"
+        description="New to Formula 1? Learn the Formula 1 basics, understand how F1 works across race weekends, and discover how teams, drivers, and championships compete."
         canonicalUrl="https://f1-basic.vercel.app/"
         ogType="website"
         schema={homeSchema}

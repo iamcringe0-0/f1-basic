@@ -70,8 +70,8 @@ export const ArticleTeamsDrivers: React.FC = () => {
         isPartOf: {
           '@id': 'https://f1-basic.vercel.app/#website',
         },
-        headline: 'Formula 1 Teams Explained: Drivers and Constructors',
-        description: 'Understand how Formula 1 teams work, why teams field two drivers, how constructors differ from drivers, and how both championships are scored.',
+        headline: 'Formula 1 Teams Explained: How F1 Works on the Grid | F1 Explained',
+        description: 'Discover how F1 works behind the scenes and explore Formula 1 basics of teams, why teams field two drivers, constructor scoring, and teammate rivalries.',
         url: 'https://f1-basic.vercel.app/f1-teams-and-drivers',
         image: 'https://f1-basic.vercel.app/og-image.png',
         publisher: {
@@ -158,8 +158,8 @@ export const ArticleTeamsDrivers: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Formula 1 Teams Explained: Drivers and Constructors"
-        description="Understand how Formula 1 teams work, why teams field two drivers, how constructors differ from drivers, and how both championships are scored."
+        title="Formula 1 Teams Explained: How F1 Works on the Grid | F1 Explained"
+        description="Discover how F1 works behind the scenes and explore Formula 1 basics of teams, why teams field two drivers, constructor scoring, and teammate rivalries."
         canonicalUrl="https://f1-basic.vercel.app/f1-teams-and-drivers"
         ogType="article"
         schema={schema}

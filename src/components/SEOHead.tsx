@@ -6,6 +6,7 @@ interface SEOHeadProps {
   canonicalUrl: string;
   ogType?: 'website' | 'article';
   ogImage?: string;
+  noindex?: boolean;
   schema?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
@@ -15,6 +16,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   canonicalUrl,
   ogType = 'website',
   ogImage = 'https://f1-basic.vercel.app/og-image.png',
+  noindex = false,
   schema,
 }) => {
   useEffect(() => {
@@ -45,7 +47,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 
     // 2. Standard Meta Tags
     setMetaTag('name', 'description', description);
-    setMetaTag('name', 'robots', 'index, follow');
+    setMetaTag('name', 'robots', noindex ? 'noindex, nofollow' : 'index, follow');
     setCanonical(canonicalUrl);
 
     // 3. Open Graph Tags

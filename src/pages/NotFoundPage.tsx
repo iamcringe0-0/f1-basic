@@ -3,10 +3,17 @@ import { Link } from 'react-router-dom';
 import { Flag, ArrowLeft, Home, Compass } from 'lucide-react';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
+import { SEOHead } from '../components/SEOHead';
 
 export const NotFoundPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#0c0c0e] text-neutral-200 flex flex-col">
+      <SEOHead
+        title="Page Not Found (404) | F1 Explained"
+        description="The page you requested does not exist on F1 Explained. Explore Formula 1 basics and discover how F1 works from our home paddock."
+        canonicalUrl="https://f1-basic.vercel.app/404"
+        noindex={true}
+      />
       <Navbar />
 
       <main className="flex-1 flex items-center justify-center py-20 px-4 sm:px-6">

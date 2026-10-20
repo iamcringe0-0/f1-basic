@@ -31,8 +31,8 @@ export const ArticleRaceWeekend: React.FC = () => {
         isPartOf: {
           '@id': 'https://f1-basic.vercel.app/#website',
         },
-        headline: 'F1 Race Weekend Explained: Practice, Qualifying and Race',
-        description: 'Learn how an F1 race weekend works, from practice and qualifying to the Grand Prix, Sprint weekends, pit stops, flags, and race strategy.',
+        headline: 'F1 Race Weekend Explained: How F1 Works & Schedule | F1 Explained',
+        description: 'Learn how an F1 race weekend works, from practice and qualifying to the Grand Prix. Master Formula 1 basics of Sprint weekends, pit stops, and race strategy.',
         url: 'https://f1-basic.vercel.app/understanding-f1-race-weekends',
         image: 'https://f1-basic.vercel.app/og-image.png',
         publisher: {
@@ -119,8 +119,8 @@ export const ArticleRaceWeekend: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="F1 Race Weekend Explained: Practice, Qualifying and Race"
-        description="Learn how an F1 race weekend works, from practice and qualifying to the Grand Prix, Sprint weekends, pit stops, flags, and race strategy."
+        title="F1 Race Weekend Explained: How F1 Works & Schedule | F1 Explained"
+        description="Learn how an F1 race weekend works, from practice and qualifying to the Grand Prix. Master Formula 1 basics of Sprint weekends, pit stops, and race strategy."
         canonicalUrl="https://f1-basic.vercel.app/understanding-f1-race-weekends"
         ogType="article"
         schema={schema}

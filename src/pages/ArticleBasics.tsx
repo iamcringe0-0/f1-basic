@@ -29,8 +29,8 @@ export const ArticleBasics: React.FC = () => {
         isPartOf: {
           '@id': 'https://f1-basic.vercel.app/#website',
         },
-        headline: 'How F1 Works: Formula 1 Basics for Beginners',
-        description: 'Discover how Formula 1 works, including the rules, cars, points system, Drivers’ Championship, Constructors’ Championship, and essential F1 terminology.',
+        headline: 'How F1 Works: Formula 1 Basics for Beginners | F1 Explained',
+        description: 'Discover how F1 works and master Formula 1 basics, including racing rules, car anatomy, points scoring, Drivers’ Championship, and essential terminology.',
         url: 'https://f1-basic.vercel.app/f1-basics',
         image: 'https://f1-basic.vercel.app/og-image.png',
         publisher: {
@@ -118,7 +118,7 @@ export const ArticleBasics: React.FC = () => {
     <>
       <SEOHead
         title="How F1 Works: Formula 1 Basics for Beginners | F1 Explained"
-        description="Discover how Formula 1 works, including the rules, cars, points system, Drivers' Championship, Constructors' Championship, and essential F1 terminology."
+        description="Discover how F1 works and master Formula 1 basics, including racing rules, car anatomy, points scoring, Drivers' Championship, and essential terminology."
         canonicalUrl="https://f1-basic.vercel.app/f1-basics"
         ogType="article"
         schema={schema}
