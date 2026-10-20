@@ -1,0 +1,6 @@
+# robots.txt for https://f1-basic.vercel.app/
+User-agent: *
+Allow: /
+
+# XML Sitemap Location
+Sitemap: https://f1-basic.vercel.app/sitemap.xml

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0c0e" />
+      <stop offset="50%" stop-color="#14141a" />
+      <stop offset="100%" stop-color="#070709" />
+    </linearGradient>
+    <linearGradient id="redAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e10600" />
+      <stop offset="100%" stop-color="#ff3b30" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+
+  <!-- Speedline Accent Pattern -->
+  <line x1="0" y1="620" x2="1200" y2="620" stroke="url(#redAccent)" stroke-width="8" />
+  <line x1="0" y1="610" x2="1200" y2="610" stroke="#e10600" stroke-width="2" stroke-opacity="0.4" />
+
+  <!-- Brand Flag Element -->
+  <g transform="translate(100, 140)">
+    <rect x="0" y="0" width="14" height="42" rx="3" fill="#e10600" transform="skewX(-15)" />
+    <text x="32" y="32" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="36" fill="#ffffff" letter-spacing="2">F1 <tspan fill="#a1a1aa" font-weight="500">EXPLAINED</tspan></text>
+  </g>
+
+  <!-- Title & Subtitle -->
+  <text x="100" y="270" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="56" fill="#ffffff" letter-spacing="-1">Formula 1 Basics: Your Starting Grid</text>
+  <text x="100" y="340" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="400" font-size="24" fill="#d4d4d8">The Beginner's Guide to Rules, Race Weekends, Teams, and Pit Strategy.</text>
+
+  <!-- Feature Grid Badges -->
+  <g transform="translate(100, 420)">
+    <!-- Badge 1 -->
+    <rect x="0" y="0" width="300" height="90" rx="10" fill="#181822" stroke="#272732" stroke-width="1.5" />
+    <text x="24" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#e10600">GUIDE 01</text>
+    <text x="24" y="66" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="18" fill="#ffffff">How F1 Works</text>
+
+    <!-- Badge 2 -->
+    <rect x="330" y="0" width="320" height="90" rx="10" fill="#181822" stroke="#272732" stroke-width="1.5" />
+    <text x="354" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#e10600">GUIDE 02</text>
+    <text x="354" y="66" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="18" fill="#ffffff">Race Weekend Explained</text>
+
+    <!-- Badge 3 -->
+    <rect x="680" y="0" width="320" height="90" rx="10" fill="#181822" stroke="#272732" stroke-width="1.5" />
+    <text x="704" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#e10600">GUIDE 03</text>
+    <text x="704" y="66" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="18" fill="#ffffff">Teams &amp; Constructors</text>
+  </g>
+</svg>

@@ -108,8 +108,11 @@ export const CarDiagramVisual: React.FC = () => {
             <svg 
               viewBox="0 0 900 360" 
               className="w-full h-auto drop-shadow-2xl"
-              aria-label="Formula 1 car aerodynamic anatomy diagram"
+              role="img"
+              aria-label="Formula 1 car aerodynamic anatomy diagram showing front wing, halo, sidepods, venturi floor, and rear wing"
             >
+              <title>Formula 1 Car Aerodynamic Anatomy Diagram</title>
+              <desc>Technical profile diagram of a modern Formula 1 car illustrating front wing, halo cockpit protection, sidepod cooling intakes, ground effect floor tunnels, 18-inch Pirelli slick tyres, and rear DRS wing.</desc>
               <defs>
                 <linearGradient id="chassisGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#1e1e24" />

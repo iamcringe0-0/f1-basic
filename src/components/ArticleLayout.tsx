@@ -50,13 +50,21 @@ export const ArticleLayout: React.FC<ArticleLayoutProps> = ({
         {/* Breadcrumb & Back navigation */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
           <div className="flex items-center justify-between gap-4 border-b border-neutral-800/80 pb-4">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-400 hover:text-white transition-colors group"
-            >
-              <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform text-[#e10600]" />
-              Back to Home
-            </Link>
+            <div className="flex items-center gap-3">
+              <Link
+                to="/"
+                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-400 hover:text-white transition-colors group"
+              >
+                <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform text-[#e10600]" />
+                Back to Home
+              </Link>
+              <span className="text-neutral-600 hidden sm:inline">|</span>
+              <nav aria-label="Breadcrumb" className="hidden sm:flex items-center gap-1.5 text-xs text-neutral-400">
+                <Link to="/" className="hover:text-white transition-colors">Home</Link>
+                <span className="text-neutral-600">/</span>
+                <span className="text-neutral-300 font-medium truncate max-w-[240px]">{title}</span>
+              </nav>
+            </div>
 
             <div className="flex items-center gap-4 text-xs text-neutral-400">
               <span className="flex items-center gap-1.5 font-mono">

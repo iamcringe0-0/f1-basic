@@ -1,19 +1,52 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ArrowRight, Zap, Shield, Flag, Award, Compass, Timer, Activity } from 'lucide-react';
+import { ChevronRight, ArrowRight, Zap, Shield, Flag, Award, Compass, Timer } from 'lucide-react';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
-import { ARTICLES } from '../types';
+import { SEOHead } from '../components/SEOHead';
 
 export const HomePage: React.FC = () => {
+  const homeSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': 'https://f1-basic.vercel.app/#website',
+        url: 'https://f1-basic.vercel.app/',
+        name: 'F1 Explained',
+        description: 'New to Formula 1? Learn the basics of F1, understand race weekends, and discover how teams, drivers, and championships work with F1 Explained.',
+        publisher: {
+          '@id': 'https://f1-basic.vercel.app/#organization',
+        },
+      },
+      {
+        '@type': 'Organization',
+        '@id': 'https://f1-basic.vercel.app/#organization',
+        name: 'F1 Explained',
+        url: 'https://f1-basic.vercel.app/',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://f1-basic.vercel.app/og-image.png',
+        },
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-[#0c0c0e] text-neutral-200 flex flex-col">
+      <SEOHead
+        title="Formula 1 Basics: A Beginner's Guide to F1 | F1 Explained"
+        description="New to Formula 1? Learn the basics of F1, understand race weekends, and discover how teams, drivers, and championships work with F1 Explained."
+        canonicalUrl="https://f1-basic.vercel.app/"
+        ogType="website"
+        schema={homeSchema}
+      />
+
       <Navbar />
 
       <main className="flex-1">
         {/* Section B: Hero Section */}
         <section className="relative overflow-hidden border-b border-[#22222a] bg-gradient-to-b from-[#14141a] via-[#0f0f13] to-[#0c0c0e] pt-12 pb-20 lg:pt-20 lg:pb-28">
-          {/* Subtle motorsport track speedline background */}
           <div 
             className="absolute inset-0 opacity-15 pointer-events-none" 
             style={{
@@ -31,21 +64,22 @@ export const HomePage: React.FC = () => {
                   <span>The Beginner&apos;s Paddock Pass</span>
                 </div>
 
+                {/* Main Semantic H1 */}
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.05] font-display text-balance">
-                  Your Starting Grid to Formula 1
+                  Formula 1 Basics: Your Starting Grid to F1
                 </h1>
 
                 <p className="text-base sm:text-lg text-neutral-300 leading-relaxed max-w-2xl">
-                  Formula 1 can seem intimidating with its technical jargon, complex penalty flags, and 3-day weekend formats. <strong>F1 Explained</strong> cuts through the confusion with clear, visual guides designed specifically for new fans.
+                  Formula 1 can seem intimidating with its technical jargon, complex penalty flags, and 3-day weekend formats. <strong>F1 Explained</strong> helps beginners explore Formula 1 with structured, easy-to-follow guides covering rules, race strategies, and paddock dynamics.
                 </p>
 
-                {/* Primary & Secondary CTAs */}
+                {/* Primary & Secondary CTAs with descriptive anchor text */}
                 <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                   <Link
                     to="/f1-basics"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-white bg-[#e10600] hover:bg-[#c20500] rounded-lg transition-all shadow-lg shadow-red-950/50 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
                   >
-                    <span>Start Learning F1</span>
+                    <span>learn the basics of Formula 1</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
 
@@ -53,7 +87,7 @@ export const HomePage: React.FC = () => {
                     to="/understanding-f1-race-weekends"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-neutral-200 hover:text-white bg-neutral-900/90 hover:bg-neutral-800 border border-neutral-700/80 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
                   >
-                    <span>Explore Race Weekends</span>
+                    <span>understand an F1 race weekend</span>
                     <ChevronRight className="w-4 h-4 text-neutral-400" />
                   </Link>
                 </div>
@@ -77,8 +111,11 @@ export const HomePage: React.FC = () => {
 
               {/* Hero Motorsport Visual Graphic */}
               <div className="lg:col-span-5">
-                <div className="rounded-2xl border border-neutral-800 bg-[#121218] p-6 shadow-2xl relative overflow-hidden group">
-                  {/* Visual Starting Grid Simulation Graphic */}
+                <div 
+                  className="rounded-2xl border border-neutral-800 bg-[#121218] p-6 shadow-2xl relative overflow-hidden group"
+                  role="region"
+                  aria-label="Interactive race start lights and grid illustration"
+                >
                   <div className="flex items-center justify-between border-b border-neutral-800 pb-4 mb-5">
                     <div className="flex items-center gap-2">
                       <div className="w-2.5 h-2.5 rounded-full bg-[#e10600]" />
@@ -88,7 +125,11 @@ export const HomePage: React.FC = () => {
                   </div>
 
                   {/* Starting Lights Graphic */}
-                  <div className="flex justify-center gap-2 sm:gap-3 py-4 bg-neutral-950 rounded-xl border border-neutral-800/80 mb-5">
+                  <div 
+                    className="flex justify-center gap-2 sm:gap-3 py-4 bg-neutral-950 rounded-xl border border-neutral-800/80 mb-5"
+                    role="img"
+                    aria-label="Illustration of five red FIA start lights illuminating across the gantry"
+                  >
                     {[1, 2, 3, 4, 5].map((light) => (
                       <div key={light} className="flex flex-col items-center gap-1.5 p-2 bg-neutral-900 rounded-md border border-neutral-800">
                         <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#e10600] shadow-[0_0_12px_#e10600] animate-pulse" />
@@ -139,11 +180,12 @@ export const HomePage: React.FC = () => {
               <span className="text-xs font-bold uppercase tracking-wider text-[#e10600] block">
                 The Pinnacle of Motorsport
               </span>
+              {/* Semantic H2 */}
               <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight font-display">
-                What Makes Formula 1 Unlike Any Other Sport?
+                What Is Formula 1?
               </h2>
               <p className="text-base text-neutral-300 leading-relaxed">
-                Formula 1 is the highest level of international open-wheel, single-seater circuit racing. It is not just a driver tournament—it is an intense world tour where automotive giants design custom prototypes from scratch to battle at extreme physical limits.
+                Formula 1 is the highest level of international open-wheel, single-seater circuit racing sanctioned by the FIA. It is not just a driver tournament—it is a global championship where automotive constructors engineer custom aerodynamic prototypes to race at extreme physical limits.
               </p>
             </div>
 
@@ -156,7 +198,7 @@ export const HomePage: React.FC = () => {
                   Extreme Physics & Downforce
                 </h3>
                 <p className="text-xs text-neutral-300 leading-relaxed">
-                  Unlike road cars or NASCAR, F1 cars use inverted aerodynamic wings and underfloor ground effect tunnels to generate tons of downforce, pulling up to 5G in corners without sliding.
+                  Unlike ordinary road cars, F1 cars use inverted aerodynamic wings and underfloor ground effect venturi tunnels to generate massive downforce, allowing drivers to sustain 5G cornering loads without breaking traction.
                 </p>
               </div>
 
@@ -168,7 +210,7 @@ export const HomePage: React.FC = () => {
                   No Standard &quot;Spec&quot; Cars
                 </h3>
                 <p className="text-xs text-neutral-300 leading-relaxed">
-                  In many racing series, all competitors drive identical cars. In Formula 1, every team designs and builds its own chassis, resulting in a fascinating engineering war of upgrades.
+                  In many racing series, all competitors drive identical cars. In Formula 1, each team builds its own chassis, fueling a relentless season-long development race of aerodynamic and mechanical upgrades.
                 </p>
               </div>
 
@@ -180,7 +222,7 @@ export const HomePage: React.FC = () => {
                   Split-Second Strategy
                 </h3>
                 <p className="text-xs text-neutral-300 leading-relaxed">
-                  Pit stops take under 2.5 seconds. Strategic undercuts, tyre degradation management, and timing safety car interventions can transform a 10th-place run into a podium victory.
+                  Pit stops take under 2.5 seconds. Strategic tyre undercuts, compound choices, and timing safety cars can elevate a midfield car onto the Grand Prix podium.
                 </p>
               </div>
             </div>
@@ -195,8 +237,9 @@ export const HomePage: React.FC = () => {
                 <span className="text-xs font-bold uppercase tracking-wider text-[#e10600] block mb-1">
                   Master the Sport
                 </span>
+                {/* Semantic H2 */}
                 <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight font-display">
-                  Explore the Complete Guides
+                  Learn Formula 1: Beginner Guides
                 </h2>
               </div>
               <p className="text-xs text-neutral-400 max-w-sm">
@@ -208,11 +251,10 @@ export const HomePage: React.FC = () => {
               {/* Card 1: F1 Basics */}
               <div className="rounded-2xl border border-neutral-800 bg-[#121217] overflow-hidden flex flex-col justify-between hover:border-neutral-700 transition-all group">
                 <div>
-                  {/* Card Visual Header */}
                   <div className="p-6 bg-neutral-900 border-b border-neutral-800 relative overflow-hidden">
                     <div className="flex items-center justify-between text-xs text-neutral-400 mb-4">
                       <span className="font-mono text-[#e10600] font-bold">GUIDE 01</span>
-                      <span>9 min read</span>
+                      <span>10 min read</span>
                     </div>
                     <div className="w-12 h-12 rounded-xl bg-neutral-800 flex items-center justify-center text-[#e10600] mb-4 group-hover:scale-105 transition-transform">
                       <Compass className="w-6 h-6" />
@@ -224,7 +266,7 @@ export const HomePage: React.FC = () => {
 
                   <div className="p-6 space-y-3">
                     <p className="text-sm text-neutral-300 leading-relaxed">
-                      Understand what Formula 1 is, how the World Championship operates, car anatomy, hybrid power units, aerodynamic downforce, and essential beginner terms like DRS and pit stops.
+                      Understand how Formula 1 works, championship structures, car anatomy, hybrid power units, aerodynamic downforce, and essential beginner terms like DRS and pit stops.
                     </p>
                     <div className="pt-2 flex flex-wrap gap-2 text-[11px] text-neutral-400 font-mono">
                       <span>· Turbo Hybrids</span>
@@ -240,7 +282,7 @@ export const HomePage: React.FC = () => {
                     to="/f1-basics"
                     className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-neutral-900 hover:bg-[#e10600] text-white text-xs font-bold uppercase tracking-wider transition-colors border border-neutral-800 hover:border-[#e10600]"
                   >
-                    <span>Read Guide</span>
+                    <span>learn the basics of Formula 1</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -280,7 +322,7 @@ export const HomePage: React.FC = () => {
                     to="/understanding-f1-race-weekends"
                     className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-neutral-900 hover:bg-[#e10600] text-white text-xs font-bold uppercase tracking-wider transition-colors border border-neutral-800 hover:border-[#e10600]"
                   >
-                    <span>Read Guide</span>
+                    <span>understand an F1 race weekend</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -320,7 +362,7 @@ export const HomePage: React.FC = () => {
                     to="/f1-teams-and-drivers"
                     className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-neutral-900 hover:bg-[#e10600] text-white text-xs font-bold uppercase tracking-wider transition-colors border border-neutral-800 hover:border-[#e10600]"
                   >
-                    <span>Read Guide</span>
+                    <span>explore Formula 1 teams and drivers</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -336,11 +378,12 @@ export const HomePage: React.FC = () => {
               <span className="text-xs font-bold uppercase tracking-wider text-[#e10600] block mb-1">
                 Structured Curriculum
               </span>
+              {/* Semantic H2 */}
               <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight font-display">
-                New to F1? Start Here
+                Start Learning Formula 1
               </h2>
               <p className="text-sm text-neutral-400 mt-2">
-                Follow our recommended three-step learning progression to build your Formula 1 knowledge step by step.
+                Follow our recommended three-step learning progression to master how Formula 1 works step by step.
               </p>
             </div>
 
@@ -361,7 +404,7 @@ export const HomePage: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex items-center text-xs font-semibold text-neutral-300 group-hover:text-white">
-                  <span>Start Step 1</span>
+                  <span>learn the basics of Formula 1</span>
                   <ChevronRight className="w-3.5 h-3.5 ml-1 text-[#e10600]" />
                 </div>
               </Link>
@@ -382,7 +425,7 @@ export const HomePage: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex items-center text-xs font-semibold text-neutral-300 group-hover:text-white">
-                  <span>Start Step 2</span>
+                  <span>understand an F1 race weekend</span>
                   <ChevronRight className="w-3.5 h-3.5 ml-1 text-[#e10600]" />
                 </div>
               </Link>
@@ -403,7 +446,7 @@ export const HomePage: React.FC = () => {
                   </p>
                 </div>
                 <div className="flex items-center text-xs font-semibold text-neutral-300 group-hover:text-white">
-                  <span>Start Step 3</span>
+                  <span>explore Formula 1 teams and drivers</span>
                   <ChevronRight className="w-3.5 h-3.5 ml-1 text-[#e10600]" />
                 </div>
               </Link>

@@ -1,0 +1,766 @@
+MASTER PROMPT: F1 EXPLAINED — COMPLETE SEO & AEO OPTIMISATION
+
+Project context and most important instruction
+
+I have an existing, working Formula 1 educational website called F1 Explained, built in Google AI Studio, synchronised with GitHub, and deployed on Vercel.
+
+Live website: https://f1-basic.vercel.app/
+
+The current website contains exactly four main pages:
+
+1. Homepage: https://f1-basic.vercel.app/
+2. Article 1 — F1 Basics: https://f1-basic.vercel.app/f1-basics
+3. Article 2 — Understanding an F1 Race Weekend: https://f1-basic.vercel.app/understanding-f1-race-weekends
+4. Article 3 — F1 Teams and Drivers: https://f1-basic.vercel.app/f1-teams-and-drivers
+
+The current design is a premium, dark, motorsport-inspired interface using black, white, charcoal, and racing red. It has a navigation bar, homepage hero section, learning-guide content, article pages, table-of-contents sidebars, and internal navigation.
+
+Your task is to optimise the EXISTING website for SEO and Answer Engine Optimisation (AEO), while preserving the current visual design, content quality, working functionality, framework, and deployment setup.
+
+Do not rebuild the website from scratch. Do not replace it with a generic template. Do not remove the existing articles or change their routes unnecessarily.
+
+Work directly with the existing codebase. Inspect the files and current implementation before editing anything.
+
+We are completing an academic SEO assignment, so the implementation must be real, technically correct, testable, and easy to demonstrate to a teacher.
+
+---
+
+PHASE 1 — AUDIT THE EXISTING WEBSITE
+
+Before changing the code, inspect the entire codebase and all four pages.
+
+Create an internal checklist covering:
+
+- Existing page routes and route handling.
+- Existing titles and meta descriptions.
+- Existing H1, H2, and H3 headings.
+- Existing homepage and article content.
+- Existing images, image sources, file names, dimensions, and alt attributes.
+- Existing internal links and anchor text.
+- Existing table-of-contents navigation.
+- Existing FAQ or question-and-answer content.
+- Existing canonical URLs.
+- Existing Open Graph and social metadata.
+- Existing robots.txt and XML sitemap, if any.
+- Existing structured data, if any.
+- Existing responsive layouts and accessibility.
+- Broken links, missing images, duplicate headings, incorrect page titles, console errors, and routing issues.
+
+Do not assume a feature is missing without inspecting the code. Improve what exists and add what is genuinely required.
+
+Preserve the existing design and functionality.
+
+PHASE 2 — KEYWORD RESEARCH AND PAGE MAPPING
+
+Use the following keyword research as the initial assignment data.
+
+These are seed keywords collected or identified during our Ubersuggest research. Only the volumes explicitly visible in the supplied research are confirmed as screenshot observations. Do not invent additional search volumes, keyword difficulty scores, CPC figures, or rankings.
+
+Page 1: Homepage
+
+URL: "/"
+
+Primary keyword:
+
+- "formula 1 basics"
+
+Observed Ubersuggest search volume: 90.
+
+Secondary keyword candidates to validate:
+
+- "Formula 1 for beginners"
+- "F1 explained"
+- "Formula 1 explained"
+- "learn Formula 1"
+
+Search intent: Informational. A user wants to understand what Formula 1 is and find beginner-friendly learning resources.
+
+The homepage must introduce the entire website and help visitors choose the right beginner guide. Avoid turning the homepage into a duplicate of the complete F1 Basics article.
+
+Page 2: F1 Basics
+
+URL: "/f1-basics"
+
+Primary keyword:
+
+- "how f1 works"
+
+Observed Ubersuggest search volume: 110.
+
+Secondary keyword candidates to validate:
+
+- "Formula 1 rules for beginners"
+- "F1 points system explained"
+- "how do F1 cars work"
+- "F1 terminology for beginners"
+
+Search intent: Informational. A new fan wants to understand the sport, its rules, championship, cars, and basic terminology.
+
+Use the exact primary keyword naturally where it fits the page. Do not force awkward wording.
+
+Page 3: Understanding an F1 Race Weekend
+
+URL: "/understanding-f1-race-weekends"
+
+Primary keyword candidate:
+
+- "F1 race weekend explained"
+
+Secondary keyword candidates:
+
+- "F1 qualifying explained"
+- "how does F1 qualifying work"
+- "F1 practice sessions explained"
+- "what is a Sprint race in F1"
+- "F1 pit stops explained"
+
+Search intent: Informational. The visitor wants to understand the sequence and rules of a Formula 1 race weekend.
+
+These terms still need to be validated in Ubersuggest. Do not invent their search volumes.
+
+Page 4: F1 Teams and Drivers
+
+URL: "/f1-teams-and-drivers"
+
+Primary keyword candidate:
+
+- "Formula 1 teams explained"
+
+Secondary keyword candidates:
+
+- "F1 teams and drivers"
+- "F1 constructors championship explained"
+- "F1 drivers championship explained"
+- "how do F1 teams work"
+
+Search intent: Informational. The visitor wants to understand teams, drivers, constructors, teammates, and championship points.
+
+These terms still need to be validated in Ubersuggest. Do not invent their search volumes.
+
+Keyword mapping rules
+
+1. Assign one clear primary keyword to each page.
+2. Use approximately 2–4 relevant secondary keywords per page, prioritising those supported by our research.
+3. Keep each page focused on its own search intent.
+4. Avoid making all four pages target exactly the same primary keyword.
+5. Do not keyword-stuff titles, headings, paragraphs, image alt text, or links.
+6. Use natural synonyms and relevant terminology where they improve clarity.
+7. Include question-based queries naturally in headings and FAQs where appropriate.
+8. Do not invent search volumes, SEO difficulty scores, or evidence of ranking.
+9. Do not create additional pages merely to target individual keywords.
+10. If Ubersuggest later shows that a different keyword is more relevant, make the mapping easy to update.
+
+Create a clear keyword map in the final report, identifying each page's primary keyword, secondary keywords, and intended search intent.
+
+PHASE 3 — URL STRUCTURE AND ROUTING
+
+Retain the four existing descriptive routes:
+
+- "/"
+- "/f1-basics"
+- "/understanding-f1-race-weekends"
+- "/f1-teams-and-drivers"
+
+Do not rename these routes simply to insert keywords.
+
+Requirements:
+
+- Each page must have one consistent, preferred URL.
+- All internal links must point to the correct preferred URLs.
+- Directly opening each URL must load the correct content.
+- Refreshing an article page must not produce a 404 error.
+- Use absolute canonical URLs with the production domain.
+- Avoid duplicate accessible versions of the same page.
+- If the application supports query parameters or trailing-slash variants, handle them consistently without breaking valid URLs.
+- Only introduce redirects if an actual URL change is necessary.
+- Never redirect every article to the homepage.
+- Update internal links and sitemap entries if a route genuinely changes.
+
+Verify that the Vercel deployment continues to support direct navigation and refreshes on all four routes.
+
+PHASE 4 — SEO TITLES AND META DESCRIPTIONS
+
+Implement page-specific HTML title tags and meta descriptions.
+
+Each page must have its own unique, descriptive title and meta description relevant to its content and mapped keyword.
+
+Suggested starting points:
+
+Homepage
+
+Title:
+"Formula 1 Basics: A Beginner's Guide to F1 | F1 Explained"
+
+Meta description:
+"New to Formula 1? Learn the basics of F1, understand race weekends, and discover how teams, drivers, and championships work with F1 Explained."
+
+Article 1
+
+Title:
+"How F1 Works: Formula 1 Basics for Beginners | F1 Explained"
+
+Meta description:
+"Discover how Formula 1 works, including the rules, cars, points system, Drivers' Championship, Constructors' Championship, and essential F1 terminology."
+
+Article 2
+
+Title:
+"F1 Race Weekend Explained: Practice, Qualifying and Race"
+
+Meta description:
+"Learn how an F1 race weekend works, from practice and qualifying to the Grand Prix, Sprint weekends, pit stops, flags, and race strategy."
+
+Article 3
+
+Title:
+"Formula 1 Teams Explained: Drivers and Constructors"
+
+Meta description:
+"Understand how Formula 1 teams work, why teams field two drivers, how constructors differ from drivers, and how both championships are scored."
+
+Treat these as initial drafts, not rigid strings. Adjust them if needed to match the final content and avoid awkward keyword usage.
+
+Requirements:
+
+- Every page must have one unique title tag.
+- Every page must have one unique meta description.
+- Set metadata through the existing framework's correct mechanism.
+- Do not place metadata only in visible page content.
+- Avoid duplicate titles and descriptions across routes.
+- Ensure the metadata for each page is available in the rendered HTML and is compatible with search engine crawling.
+- Do not promise rankings or guaranteed click-through rates.
+
+PHASE 5 — H1, H2 AND H3 HEADING STRUCTURE
+
+Audit the complete heading hierarchy of all four pages.
+
+Homepage
+
+Use one clear H1 containing or naturally supporting the primary topic.
+
+Suggested H1:
+"Formula 1 Basics: Your Starting Grid to F1"
+
+Retain the current hero's strong visual appearance. The heading can be adjusted without redesigning the hero.
+
+Use H2 headings for major homepage sections, such as:
+
+- What Is Formula 1?
+- Learn Formula 1: Beginner Guides
+- How an F1 Race Weekend Works
+- F1 Teams and Drivers
+- Start Learning Formula 1
+
+Use H3 headings for individual cards or subordinate concepts only where semantically appropriate.
+
+Article 1: F1 Basics
+
+Use one clear H1:
+
+"How F1 Works: A Beginner's Guide to Formula 1"
+
+Use logical H2 sections for the major concepts already covered, such as:
+
+- What Is Formula 1?
+- How the Formula 1 World Championship Works
+- Driver vs. Constructor Explained
+- The Anatomy of an F1 Car
+- Aerodynamics, Tyres and Pit Stops
+- How F1 Drivers and Teams Earn Points
+- Drivers' Championship vs. Constructors' Championship
+- What Does the Chequered Flag Mean?
+- Essential F1 Terminology
+- Frequently Asked Questions
+
+Use H3 headings for subordinate concepts, examples, or individual terminology where needed.
+
+Article 2: Race Weekend
+
+Use one clear H1:
+
+"How an F1 Race Weekend Works"
+
+Use H2 headings for:
+
+- What Happens During an F1 Race Weekend?
+- Free Practice Explained
+- F1 Qualifying Explained
+- How Q1, Q2 and Q3 Work
+- The Grand Prix Race
+- Sprint Weekends Explained
+- Formation Laps, Race Starts and Pit Stops
+- Flags, Safety Cars and Virtual Safety Cars
+- Race Finishes, Classifications and Points
+- Frequently Asked Questions
+
+Use H3 headings for relevant subtopics.
+
+Article 3: Teams and Drivers
+
+Use one clear H1:
+
+"Formula 1 Teams and Drivers: How the Grid Works"
+
+Use H2 headings for:
+
+- How F1 Teams Compete in the Championship
+- The Difference Between a Team, Constructor and Driver
+- Why F1 Teams Field Two Drivers
+- Teammate Rivalries and Teamwork
+- Key Roles Inside an F1 Team
+- Drivers' Championship vs. Constructors' Championship
+- Car Development and Technical Upgrades
+- Driver Transfers and Reserve Drivers
+- Frequently Asked Questions
+
+Use H3 headings for subtopics where appropriate.
+
+Heading rules
+
+- One main H1 per page.
+- H2s for major sections and H3s for subsections.
+- Do not use heading tags simply to make text large or bold.
+- Do not skip heading levels without a good structural reason.
+- Keep headings descriptive and natural.
+- Include relevant keywords where they fit.
+- Avoid repeating the exact same heading across pages when the section has a different purpose.
+- Preserve existing useful sections and table-of-contents navigation.
+- Ensure every table-of-contents link points to a unique, correct section ID.
+- Ensure the visible heading and its HTML heading tag agree.
+
+Do not replace the entire article with a shorter version simply to change headings.
+
+PHASE 6 — ARTICLE CONTENT AND SEARCH INTENT
+
+Preserve the existing educational content and improve it where required.
+
+Each article must answer its target search intent clearly and thoroughly.
+
+Article 1
+
+Help readers understand how F1 works, including the sport's structure, cars, points, drivers, constructors, terminology, and basic rules.
+
+Article 2
+
+Explain the sequence of practice, qualifying, the Grand Prix, and Sprint formats where applicable. Explain race starts, pit stops, flags, safety cars, and classifications.
+
+Article 3
+
+Explain teams, constructors, drivers, teammates, team personnel, development, transfers, and the two championships.
+
+Content requirements:
+
+- Use simple language for beginners.
+- Explain technical terms when they first appear.
+- Use accurate examples and short explanatory paragraphs.
+- Add useful lists, comparison tables, and callouts where they improve comprehension.
+- Avoid unnecessary repetition and filler.
+- Avoid keyword stuffing.
+- Do not copy content from other websites.
+- Do not invent facts, quotes, statistics, regulations, or results.
+- Do not make unsupported claims about current teams or drivers.
+- Clearly distinguish season-dependent rules from general concepts.
+- Use authoritative sources to verify important regulatory claims, particularly official FIA regulations and official Formula 1 resources.
+- Include source links when useful for factual verification, but do not turn the site into a collection of copied content.
+
+Important: Check existing statistics and technical claims in the current website. Some statements may be outdated or dependent on the season. Correct inaccurate claims using reliable sources rather than preserving them merely because they are already in the code.
+
+PHASE 7 — IMAGE SEO, ALT TEXT AND IMAGE ACCESSIBILITY
+
+Audit every image used on the homepage and all three articles, including hero images, article illustrations, cards, and decorative graphics.
+
+Image requirements
+
+1. Every meaningful content image must have accurate, descriptive alternative text.
+2. Alt text must describe the actual image and its relevant purpose.
+3. Do not stuff keywords into alt attributes.
+4. Do not invent an image description without checking what the image actually depicts.
+5. Use empty alt text ("alt=""") for purely decorative images that should be ignored by screen readers.
+6. Do not use file names, generic phrases such as "image of", or repeated keyword lists as alt text.
+7. Ensure all images load correctly in the deployed website.
+8. Give image files descriptive file names where practical and safe to change.
+9. Use appropriate image dimensions and responsive image techniques.
+10. Prefer modern efficient formats such as WebP or AVIF when supported by the existing build pipeline.
+11. Compress unnecessarily large images without noticeably damaging visual quality.
+12. Specify image width and height where practical to reduce layout shifts.
+13. Lazy-load below-the-fold images when appropriate.
+14. Do not lazy-load the main above-the-fold hero image if doing so would delay its display; use appropriate loading priority.
+15. Preserve the existing image composition and visual design.
+16. Do not use unreliable remote image URLs that frequently break.
+17. Do not replace valid images with unrelated stock imagery.
+18. Do not hotlink copyrighted images without appropriate permission.
+19. Use images that are available for legitimate use and preserve relevant licensing information.
+20. Keep image text accessible as HTML rather than relying on text embedded only inside an image.
+
+If an image cannot be identified confidently, flag it for review instead of fabricating alt text.
+
+For each page, produce an image audit with:
+
+- Image or asset file.
+- Page where it appears.
+- Current alt text.
+- Recommended alt text.
+- Whether it is meaningful or decorative.
+- Whether its loading, dimensions, and format are satisfactory.
+
+Do not add unnecessary images just to increase keyword usage.
+
+PHASE 8 — INTERNAL LINKING AND DESCRIPTIVE ANCHOR TEXT
+
+Build a meaningful internal-linking structure connecting all four pages.
+
+The homepage must link to all three articles.
+
+Each article must link contextually to the other two articles where the destination genuinely helps the reader.
+
+Use the existing navigation and article cards, and add contextual links within article content where appropriate.
+
+Required linking plan
+
+Homepage
+
+Add or preserve links using descriptive anchor text such as:
+
+- "learn the basics of Formula 1" → "/f1-basics"
+- "understand an F1 race weekend" → "/understanding-f1-race-weekends"
+- "explore Formula 1 teams and drivers" → "/f1-teams-and-drivers"
+
+The existing cards can be retained; ensure their actual clickable text is descriptive and each link points to the correct article.
+
+Article 1: F1 Basics
+
+Add relevant contextual links such as:
+
+- "how an F1 race weekend works" → "/understanding-f1-race-weekends"
+- "how Formula 1 teams and drivers compete" → "/f1-teams-and-drivers"
+
+Place links where they naturally support the explanation of races, drivers, or constructors.
+
+Article 2: Race Weekend
+
+Add relevant contextual links such as:
+
+- "learn the basics of Formula 1" → "/f1-basics"
+- "understand F1 teams and drivers" → "/f1-teams-and-drivers"
+
+Place links within relevant discussions of championship points, qualifying, teams, or race strategy.
+
+Article 3: Teams and Drivers
+
+Add relevant contextual links such as:
+
+- "understand how F1 works" → "/f1-basics"
+- "learn how an F1 race weekend works" → "/understanding-f1-race-weekends"
+
+Place links in relevant discussions of drivers, constructors, points, and race weekends.
+
+Anchor-text rules
+
+- Use descriptive anchor text that explains the destination.
+- Use natural variations rather than repeating one exact phrase everywhere.
+- Use relevant keyword phrases where they fit naturally.
+- Avoid vague anchors such as "click here", "read more", or "learn more" when a descriptive alternative is practical.
+- Avoid long, unnatural keyword-stuffed anchors.
+- Do not link unrelated phrases merely to insert keywords.
+- Use real links with valid destinations.
+- Ensure links are keyboard-accessible.
+- Do not create links that lead to nonexistent pages.
+- Keep links visible and distinguishable from ordinary text.
+- Preserve all existing working navigation and table-of-contents links.
+
+Create a link-audit table in the final report listing the source page, anchor text, destination URL, and whether the link was tested.
+
+PHASE 9 — Q&A CONTENT AND AEO
+
+Add useful question-and-answer content to all three articles.
+
+The goal is to answer real beginner questions directly, not to create artificial FAQ content for search engines.
+
+Use a clearly labelled Frequently Asked Questions section on each article. Include approximately 4–6 relevant questions per article, depending on the available space and the usefulness of the answers.
+
+Keep answers concise, accurate, and understandable. Usually answer the question in the first sentence, then add context where necessary.
+
+Article 1: Suggested questions
+
+- What is Formula 1?
+- How does F1 work?
+- How do F1 drivers earn points?
+- What is the difference between the Drivers' Championship and Constructors' Championship?
+- What is DRS in Formula 1?
+- What does a chequered flag mean in F1?
+
+Article 2: Suggested questions
+
+- How does an F1 race weekend work?
+- What happens during F1 practice sessions?
+- How does F1 qualifying work?
+- What is the difference between a Sprint weekend and a standard race weekend?
+- How long is an F1 race?
+- What happens during an F1 pit stop?
+
+Article 3: Suggested questions
+
+- How many drivers are in an F1 team?
+- What is the difference between an F1 team and a constructor?
+- How do F1 teams earn championship points?
+- Why do F1 teammates compete against each other?
+- What does an F1 team principal do?
+- How do F1 driver transfers work?
+
+These are candidate questions. Check that each is relevant, not redundant, and accurately answered before adding it.
+
+AEO requirements
+
+- Use natural question-based headings.
+- Provide direct answers before lengthy explanations.
+- Use clear definitions for technical terms.
+- Use concise, well-structured paragraphs and lists.
+- Keep important facts in accessible HTML text.
+- Avoid vague, promotional, or unsupported answers.
+- Ensure the same answer is not repeated across every page without a reason.
+- Keep answers aligned with the article's topic.
+- Do not promise that search engines or AI assistants will feature the website.
+- Do not create fabricated citations or claims of expertise.
+
+If structured FAQ data is considered, implement it only when appropriate and consistent with the visible page content and applicable search engine guidelines. Do not assume FAQ schema will generate rich search results.
+
+PHASE 10 — TECHNICAL SEO
+
+Inspect and implement the following where applicable.
+
+A. XML sitemap
+
+Create or update a valid XML sitemap at:
+
+"https://f1-basic.vercel.app/sitemap.xml"
+
+Include the four canonical pages:
+
+- "https://f1-basic.vercel.app/"
+- "https://f1-basic.vercel.app/f1-basics"
+- "https://f1-basic.vercel.app/understanding-f1-race-weekends"
+- "https://f1-basic.vercel.app/f1-teams-and-drivers"
+
+Requirements:
+
+- Include only real, canonical, indexable pages.
+- Use valid XML.
+- Avoid duplicate or broken URLs.
+- Do not include asset URLs as ordinary article pages.
+- Do not invent last-modified dates.
+- Ensure the sitemap is accessible on the deployed domain.
+
+B. robots.txt
+
+Create or update:
+
+"https://f1-basic.vercel.app/robots.txt"
+
+Requirements:
+
+- Do not block the four intended public pages or their essential assets.
+- Include the sitemap location.
+- Avoid broad blocking rules that accidentally prevent crawling.
+- Do not add a "noindex" directive to robots.txt.
+
+C. Canonical URLs
+
+Give each of the four pages a self-referencing absolute canonical URL.
+
+Examples:
+
+- Homepage: "https://f1-basic.vercel.app/"
+- F1 Basics: "https://f1-basic.vercel.app/f1-basics"
+- Race Weekend: "https://f1-basic.vercel.app/understanding-f1-race-weekends"
+- Teams and Drivers: "https://f1-basic.vercel.app/f1-teams-and-drivers"
+
+Ensure there is only one correct canonical declaration per page.
+
+D. Indexing directives
+
+- Ensure intended public pages are not accidentally marked "noindex".
+- Ensure robots.txt does not block crawling of intended pages.
+- Do not add conflicting indexing directives.
+- Do not claim that a page is indexed by Google unless this has actually been verified.
+
+E. Open Graph and social metadata
+
+Add appropriate page-specific Open Graph metadata, including:
+
+- "og:title"
+- "og:description"
+- "og:url"
+- "og:type"
+- "og:image" where a suitable, accessible image exists
+
+Add a suitable Twitter/X card configuration where appropriate.
+
+Use absolute URLs for production images and pages. Do not reference nonexistent images.
+
+F. Structured data
+
+Inspect whether structured data is appropriate for the site.
+
+Where supported and genuinely accurate, consider:
+
+- "Organization" for the website's publishing identity.
+- "WebSite" for the website.
+- "Article" or "BlogPosting" for the three educational articles.
+- "BreadcrumbList" if visible breadcrumbs are implemented.
+
+Requirements:
+
+- Use JSON-LD where appropriate.
+- Ensure structured data reflects actual visible content.
+- Use correct canonical page URLs.
+- Include only known, verifiable author, publisher, publication, and modification information.
+- Do not invent author credentials, ratings, reviews, dates, or organisational details.
+- Do not add product schema to an educational website with no relevant products.
+- Do not add fabricated ratings or review schema.
+- Do not implement unsupported or misleading schema just to increase the number of schema types.
+- Validate syntax and check for relevant warnings or errors where tools are available.
+
+G. Page performance and mobile usability
+
+- Preserve the existing responsive design.
+- Check mobile navigation and article layouts.
+- Avoid horizontal overflow.
+- Optimise large images.
+- Avoid unnecessary JavaScript and dependencies.
+- Reduce layout shifts.
+- Ensure text contrast and keyboard accessibility.
+- Preserve working routes and interactive components.
+- Fix actual console errors and broken resources caused by the project.
+- Do not claim Core Web Vitals passed without testing them.
+
+PHASE 11 — ACCESSIBILITY AND HTML QUALITY
+
+Review the website for basic accessibility and semantic HTML.
+
+- Use semantic "header", "nav", "main", "article", "section", and "footer" elements where appropriate.
+- Ensure buttons and links have meaningful accessible names.
+- Ensure keyboard users can reach navigation, links, and table-of-contents controls.
+- Ensure focus indicators remain visible.
+- Ensure headings are meaningful and ordered logically.
+- Ensure form controls, if any, have labels.
+- Ensure meaningful images have appropriate alt text.
+- Avoid placing essential information exclusively inside images.
+- Ensure colour is not the only way information is communicated.
+- Preserve sufficient text contrast against the dark background.
+
+Do not change the website's visual identity unnecessarily to meet these requirements.
+
+PHASE 12 — PRESERVE THE CURRENT WEBSITE AND DEPLOYMENT
+
+This project is already connected to GitHub and deployed to Vercel.
+
+Before editing:
+
+- Inspect the current project structure and dependencies.
+- Identify the existing routing approach and metadata mechanism.
+- Preserve the current build configuration.
+- Do not replace the package manager or framework unnecessarily.
+- Avoid deleting existing assets or useful components.
+- Avoid changing environment variables or deployment settings without a genuine need.
+- Do not overwrite the existing project with a new starter template.
+
+After editing:
+
+- Run the available build and validation commands.
+- Fix build errors introduced by the changes.
+- Check for broken imports, invalid JSX/TSX, missing assets, and console errors.
+- Ensure all four pages remain functional.
+- Confirm that the production deployment can be built successfully.
+- Do not claim GitHub changes have been pushed or Vercel has redeployed unless those actions actually occurred.
+- Do not expose secrets or credentials in the source code.
+
+PHASE 13 — FINAL TESTING AND REPORT
+
+Test the actual implementation after changes.
+
+Verify the following for each of the four pages:
+
+1. Correct route and page content.
+2. Unique SEO title.
+3. Unique meta description.
+4. One main H1.
+5. Logical H2 and H3 structure.
+6. Correct primary and secondary keyword mapping.
+7. Meaningful image alt text where applicable.
+8. Working internal links and descriptive anchor text.
+9. Relevant Q&A section on each article.
+10. Correct canonical URL.
+11. Appropriate Open Graph metadata.
+12. Indexing directives.
+13. Sitemap inclusion.
+14. Mobile and desktop layout.
+15. Direct URL access and refresh.
+16. No broken internal links or missing images.
+17. Structured-data validity, if implemented.
+18. Build status and actual errors found.
+
+Create a final report containing:
+
+A. Page-by-page SEO audit
+
+Use a table with:
+
+- Page.
+- URL.
+- Primary keyword.
+- Secondary keywords.
+- Title tag.
+- Meta description.
+- H1.
+- H2 structure.
+- Image alt-text status.
+- Internal links.
+- Q&A status.
+- Canonical status.
+- Indexing status.
+- Verification result.
+
+B. Keyword mapping table
+
+Show the four pages, primary keywords, secondary keywords, and search intent.
+
+C. Internal-linking table
+
+Show source page, anchor text, destination URL, and link test result.
+
+D. Image audit
+
+Show image assets, current and updated alt text, decorative versus meaningful classification, and any remaining image issues.
+
+E. Technical SEO checklist
+
+Report the actual status of:
+
+- Sitemap.
+- robots.txt.
+- Canonical URLs.
+- Metadata.
+- Structured data.
+- Mobile layout.
+- Build.
+- Direct routes and refreshes.
+- Broken links.
+- Console errors.
+
+F. Remaining issues
+
+List any issues that could not be fixed or verified, and explain what additional action is needed.
+
+Use clear statuses such as "PASS", "FIXED", "NEEDS REVIEW", "NOT TESTED", and "FAILED". Never mark an untested item as passed.
+
+FINAL INSTRUCTION
+
+Implement the full SEO and AEO improvements directly in the existing F1 Explained codebase.
+
+Prioritise the real implementation of keyword mapping, page-specific metadata, semantic headings, image alt text, internal links, descriptive anchor text, useful question-and-answer sections, canonical URLs, sitemap, robots.txt, appropriate structured data, accessibility, and technical validation.
+
+Preserve the current website design, the existing four main URLs, the educational content, and the working Vercel deployment.
+
+Do not stop after providing recommendations. Make the changes in the code, run the available tests, and provide a truthful report of what was implemented and verified.
+
+If any external service, search tool, or deployment permission is unavailable, complete the work that can be done locally and clearly identify what still requires manual verification.
